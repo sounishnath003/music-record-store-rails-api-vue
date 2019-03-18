@@ -1,4 +1,4 @@
-import "axios" from 'axios'
+import axios from 'axios'
 
 const API_URL = 'https://localhost:5000'
 
@@ -19,8 +19,8 @@ const plainAxiosInstance = axios.create({
 })
 
 securedAxiosInstance.interceptors.request.use(config => {
-  const method = config.method.toUpperCase();
-  if (method !== 'OPTIONS' && method !== 'GET'){
+  const method = config.method.toUpperCase()
+  if (method !== 'OPTIONS' && method !== 'GET') {
     config.headers = {
       ...config.headers,
       'X-CSRF-TOKEN': localStorage.csrf
@@ -31,25 +31,26 @@ securedAxiosInstance.interceptors.request.use(config => {
 })
 
 securedAxiosInstance.interceptors.response.use(null, error => {
-  if (error.response && error.response.config && response.status === 401){
+  // eslint-disable-next-line no-undef
+  if (error.response && error.response.config && response.status === 401) {
+    // eslint-disable-next-line standard/object-curly-even-spacing
     return plainAxiosInstance.post('/refresh', {}, { headers: {'X-CSRF-TOKEN': localStorage.csrf}})
-    .then (response => {
-      localStorage.csrf = response.data.csrf
-      localStorage.signedIn = true
+      .then(response => {
+        localStorage.csrf = response.data.csrf
+        localStorage.signedIn = true
 
-      let retryConfig = error.response.config
-      retryConfig.headers['X-CSRF-TOKEN'] = localStorage.csrf
+        let retryConfig = error.response.config
+        retryConfig.headers['X-CSRF-TOKEN'] = localStorage.csrf
 
-      return plainAxiosInstance.request(retryConfig)
-    }).catch(error => {
-      delete localStorage.csrf
-      delete localStorage.signedIn
+        return plainAxiosInstance.request(retryConfig)
+      }).catch(error => {
+        delete localStorage.csrf
+        delete localStorage.signedIn
 
-      location.replace('/')
-      return Promise.reject(error)
-    })
+        location.replace('/')
+        return Promise.reject(error)
+      })
   }
 })
-
 
 export { securedAxiosInstance, plainAxiosInstance }

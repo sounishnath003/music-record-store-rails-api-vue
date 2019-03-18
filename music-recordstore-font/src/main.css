@@ -20,9 +20,22 @@
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 
+ *{
+   font-family: product sans;
+ }
+
 html {
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+.label {
+  display: block;
+  text-transform: uppercase;
+  color: darkgrey;
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
 }
 
 /* Sections
