@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API_URL = 'https://localhost:5000'
+const API_URL = 'http://localhost:3000'
 
 const securedAxiosInstance = axios.create({
   baseURL: API_URL,
@@ -26,30 +26,34 @@ securedAxiosInstance.interceptors.request.use(config => {
       'X-CSRF-TOKEN': localStorage.csrf
     }
   }
-
   return config
 })
 
 securedAxiosInstance.interceptors.response.use(null, error => {
-  // eslint-disable-next-line no-undef
-  if (error.response && error.response.config && response.status === 401) {
-    // eslint-disable-next-line standard/object-curly-even-spacing
-    return plainAxiosInstance.post('/refresh', {}, { headers: {'X-CSRF-TOKEN': localStorage.csrf}})
+  if (
+    error.response &&
+    error.response.config &&
+    error.response.status === 401
+  ) {
+    return plainAxiosInstance
+      .post('/refresh', {}, { headers: { 'X-CSRF-TOKEN': localStorage.csrf } })
       .then(response => {
         localStorage.csrf = response.data.csrf
         localStorage.signedIn = true
 
         let retryConfig = error.response.config
         retryConfig.headers['X-CSRF-TOKEN'] = localStorage.csrf
-
         return plainAxiosInstance.request(retryConfig)
-      }).catch(error => {
+      })
+      .catch(error => {
         delete localStorage.csrf
         delete localStorage.signedIn
 
         location.replace('/')
         return Promise.reject(error)
       })
+  } else {
+    return Promise.reject(error)
   }
 })
 

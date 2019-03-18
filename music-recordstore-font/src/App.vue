@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Header/>
-    <img src="./assets/undrw1.png" width="420" height="420">
+    <img src="./assets/undrw1.png" width="420" height="420" class="text-center">
     <router-view/>
   </div>
 </template>
