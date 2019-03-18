@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
   def index
-    #code
+    @artists = Artist.all.order("created_at DESC")
+    render json: @artists
   end
 end

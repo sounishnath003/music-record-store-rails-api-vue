@@ -2,6 +2,7 @@ module Api
   module V1
     #code
     class ArtistsController < ApplicationController
+      before_action :authorize_access_request!, :only => [:create, :destroy]
       before_action :set_artist, only: [:show, :update, :destroy]
 
       # GET /artists
@@ -49,7 +50,7 @@ module Api
 
         # Only allow a trusted parameter "white list" through.
         def artist_params
-          params.require(:artist).permit(:name, :user_id)
+          params.require(:artist).permit(:name)
         end
     end
   end
