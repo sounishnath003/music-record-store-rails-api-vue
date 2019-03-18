@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'signup/create'
   root to: "home#index"
   #/api/v1/artists
   namespace :api do
