@@ -3,7 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import VueAxios from 'vue-axios'
+// import VueAxios from 'vue-axios' //why couldn't started
 import './main.css'
 
 Vue.config.productionTip = false
