@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9bf8122b-4bca-4c9a-9cfa-c479ed391179" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/initializers/jwt_sessions.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/procfile" afterDir="false" />
-    </list>
+    <list default="true" id="9bf8122b-4bca-4c9a-9cfa-c479ed391179" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
     <ignored path="$PROJECT_DIR$/public/system/" />
@@ -23,6 +18,7 @@
     <session id="1491761509">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
           <entry key="project.open.time.20" value="1" />
           <entry key="project.opened" value="1" />
         </counts>
@@ -67,8 +63,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/home_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="21" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
+            <state relative-caret-position="102">
+              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
             </state>
           </provider>
         </entry>
@@ -110,7 +106,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="34" />
     <option name="y" value="7" />
     <option name="width" value="1275" />
@@ -253,15 +249,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1552897644257</updated>
-      <workItem from="1552897659060" duration="5660000" />
+      <workItem from="1552897659060" duration="5820000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5660000" />
+    <option name="totallyTimeSpent" value="5820000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="34" y="7" width="1275" height="725" extended-state="1" />
+    <frame x="34" y="7" width="1275" height="725" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
@@ -364,8 +360,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/home_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="21" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
+        <state relative-caret-position="102">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
