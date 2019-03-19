@@ -9,7 +9,7 @@
         <input
           type="text"
           id="record_title"
-          class="input"
+          class="input border-2 rounded font-semibold text-indigo-dark bg-grey-lighter border-indigo-light py-2 px-6"
           autofocus
           autocomplete="off"
           placeholder="Type a record name"
@@ -21,7 +21,7 @@
         <input
           type="text"
           id="record_year"
-          class="input"
+          class="input border-2 rounded font-semibold text-indigo-dark bg-grey-lighter border-indigo-light py-2 px-6"
           autofocus
           autocomplete="off"
           placeholder="Year"
@@ -30,7 +30,7 @@
 
       <div class="mb-6">
         <label for="artist" class="label">Artist</label>
-        <select id="artist" class="select" v-model="newRecord.artist">
+        <select id="artist" class="input border-2 rounded font-semibold text-indigo-dark bg-grey-lighter border-indigo-light py-2 px-6" v-model="newRecord.artist">
           <option disabled value="">Select an artist</option>
           <option :value="artist.id" v-for="artist in artists" :key="artist.id">{{ artist.name }}</option>
         </select>
@@ -75,7 +75,7 @@
               </div>
 
               <div class="mb-6">
-                 <select id="artist_update" class="select" v-model="record.artist">
+                 <select id="artist_update" class="input border-2 rounded font-semibold text-indigo-dark bg-grey-lighter border-indigo-light py-2 px-6" v-model="record.artist">
                     <option disabled value="">Select an artist</option>
                   <option :value="artist.id" v-for="artist in artists" :key="artist.id">{{ artist.name }}</option>
                   </select>
